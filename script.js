@@ -142,7 +142,7 @@ function openfile(){
     
     var file = textsaisi2.replace('cat ', '');
     console.log(file);
-    alert(file);
+    
     //file = "Dates.txt";
     return Fichiers[file];
     var win = window.location.pathname;
@@ -179,6 +179,28 @@ function runScript(e) {
         
         return false;
     }
+    
+}
+function runScript2(e) {
+    submit();
+    return false;
+    
+    
+}
+
+function runScript3(e) {
+    valider();
+    return false;
+    
+    
+}
+
+function valider(e) {
+    if (document.getElementById ('fin').value == "42/12/2020"){
+        document.location.href = "https://noeldenico.github.io/Game2.html"
+    }
+    return false;
+    
     
 }
 
