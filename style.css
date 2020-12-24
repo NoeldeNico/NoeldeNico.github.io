@@ -267,3 +267,64 @@ body {
     resize: none;
     
 }
+
+.hide{
+    display: none;
+}
+
+.hide > div > button{
+    padding: 2px;
+    
+    
+    width: 150px;
+    border-radius: 20px;
+    
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Raleway";
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.controls{
+  
+    
+    
+
+    
+}
+
+.controls > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+      
+      
+  
+      
+  }
+.controls > div > button{
+    width: 50px;
+    height: 50px;
+}
+
+.controls > div > div > button{
+    width: 50px;
+    height: 50px;
+    
+}
+
+.controls > button > h1{
+    font-size: 100%;
+    font-weight: 300px;
+
+}
+table, th, td {
+    border: 1px solid black;
+  }
+
+td{
+    display: flex;
+    justify-content: center;
+}

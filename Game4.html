@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>Un bô cadeau</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div>
+      <header>
+          <div class="Website">
+            <div class="center-text">
+                <h1>Le Noël de Monsieur Nicolas</h1>
+                <h5 style="font-style: italic; margin-top: 0px;">Jeu 4</h5>
+    
+            </div>
+          </div>
+        
+          
+      </header>
+      <main id="page">
+        <article>
+          <section style="min-height: 30vh; padding-top: 200px;">
+            <div class="element">
+              <div class="centered">
+                <h2 class="presentation" style="width: 1000px;">Un Pac-Man de Noël</h2>
+                <div id="controls" class="controls">
+                  <div style="display: flex; flex-direction: row; ">
+                    <button onclick="return gauche()"><h1>⬅️</h1></button>
+                  <div style="display: flex; flex-direction: column;">
+                    <button onclick="return haut()"><h1>⬆️</h1></button>
+                    <button onclick="return bas()"><h1>⬇️</h1></button>
+                  </div>
+                  <button onclick="return droite()"><h1>➡️</h1></button>
+                </div>
+                  
+                  
+                  
+              </div>
+
+                
+                
+                
+                
+                
+                
+                
+            </div>
+            
+          </section>
+          <section style="min-height: 30vh; padding-top: 50px;">
+            
+            <div class="element">
+              
+             
+              <table style="background-color: darkgray; width: 500px;" id="map">
+                <caption>Conduit le papa Noël au cadeau</caption>
+                
+                
+                <tr style="display: flex; flex-direction: row;">
+                  
+                  <td style="width: 100px; height: 100px;"><img src="pa.png" width="50%"></td>
+                  <td style="width: 100px; height: 100px;"></td>
+                  <td style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+                  <td style="width: 100px; height: 100px;"></td>
+                  <td style="width: 100px; height: 100px;"></td>
+                  <td style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+                  
+                  
+                </tr>
+
+                <tr style="display: flex; flex-direction: row;">
+                  <td style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+                    <td  style="width: 100px; height: 100px;"></td>
+                    <td style="width: 100px; height: 100px;"></td>
+                    <td  style="width: 100px; height: 100px;"></td>
+                    <td  style="width: 100px; height: 100px;"></td>
+                    <td style="width: 100px; height: 100px;"></td>
+
+                </tr>
+                <tr style="display: flex; flex-direction: row;">
+                  
+                  <td style="width: 100px; height: 100px;"></td>
+                  <td style="width: 100px; height: 100px;"></td>
+                  <td style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+                  <td style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+                  <td style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+                  <td style="width: 100px; height: 100px;"></td>
+                  
+                  
+                </tr>
+
+                <tr style="display: flex; flex-direction: row;">
+                  <td style="width: 100px; height: 100px;"></td>
+                    <td  style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+                    <td style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+                    <td  style="width: 100px; height: 100px;"></td>
+                    <td  style="width: 100px; height: 100px;"></td>
+                    <td style="width: 100px; height: 100px;"></td>
+
+                </tr>
+                <tr style="display: flex; flex-direction: row;">
+                  <td style="width: 100px; height: 100px;"></td>
+                    <td  style="width: 100px; height: 100px;"></td>
+                    <td style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+                    <td  style="width: 100px; height: 100px;"></td>
+                    <td  style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+                    <td style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+
+                </tr>
+                <tr style="display: flex; flex-direction: row;">
+                  <td style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+                    <td  style="width: 100px; height: 100px;"></td>
+                    <td style="width: 100px; height: 100px;"><img src="wall.png" width="100%" height="100%"></td>
+                    <td  style="width: 100px; height: 100px;"></td>
+                    <td  style="width: 100px; height: 100px;"></td>
+                    <td style="width: 100px; height: 100px;"><img src="kdo.png" width="100%" height="100%"></td>
+
+                </tr>
+                  
+                  
+                
+                
+              </table>
+            </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+              <div class="hide" id="hide">
+                <h2 class="presentation" style="width: 1000px;">Félicitations, c'est la bonne réponse !</h2>
+                <div>
+                  <button><a href="Game5.html">Épreuve suivante</a></button>
+                </div>
+  
+              </div>
+
+            </div>
+            
+            
+            
+          </section>
+          <p id='stockindentation'></p>
+        </article>
+      </main>
+    </div>
+    <script src="script Game4.js"></script>
+      
+  </body>
+  
+</html>

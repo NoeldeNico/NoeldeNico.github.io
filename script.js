@@ -1,7 +1,7 @@
 //var locations = ['Desktop', 'Documents', 'Images'];
 
 var locations = {'Desktop' : [{'Videos pornos' : ['Scatophile.mp4', 'XX.mp4']}, 'Dates.txt'], 'Documents' : [{'Videos pornos' : ['Scatophile.mp4', 'XX.mp4']}, 'Vita&SlimaneCadeauRomane.mp4'], 'Images' : ['Coco_a_la_mer.png', 'Axel_nu.png']};
-var Fichiers = {'Dates.txt' : 'Noël : 42/12/2020 \rChausette'}
+var Fichiers = {'Dates.txt' : 'Chausette \rLes indispensables du frigo yaourts œufs lait gruyère beurre (crème fraîche) olives Les fonds de placards pain moutarde vinaigre huile sel poivre herbes de Provence pâtes riz semoule farine sucre café/thé/tisane gâteaux secs boite de thon boite de maïs boite de sauce tomate levure chimique sucre vanillé chocolat confiture miel pommes de terre oignons/ ail Les légumes petits pois en boîte endives salade verte poivron Noël : 42/12/2020 légumes frais de saison (carottes, tomates, courgettes, aubergines, courges...) légumes surgelés (haricots, épinards, courgettes, brocolis, choux, assortiment de légumes...) Les fruits pommes poires fruits de saison (orange, kiwi, cerises, pêches, abricots...) boites de fruits au sirop (poire, pêche, ananas) La viande et le poisson jambon lardons (peut être congelé pour conservation longue durée) steak haché (idem pour la congélation) blancs de poulet ou dinde (idem pour la congélation) saucisses (knaki, chipolata, merguez, saucisses de Strasbourg... idem pour la congélation) Les roues de secours biscottes sachets de soupe en poudre sachets de purée mousseline pâtes feuilleté (au frigo) compotes taboulé préparé en boîte boîtes de fruits ou salade de fruit les prévoyances du congélateur : légumes, lardons, viande, poisson, pain Les extra'}
 
 
 
@@ -38,12 +38,13 @@ function enumerate(tlist, caca) {
     var textfinal = ""
     var chose;
 
-    //var textdansinput = document.getElementById ('saisi').value;
-    //var tindentation = textdansinput.substr(textdansinput.lastIndexOf("\n")+1);
+    var textdansinput = document.getElementById ('saisi').value;
+    var tindentation = textdansinput.substr(textdansinput.lastIndexOf("\n")+1);
+    
      
 
     if (tindentation.includes('/', 0)) {
-        
+        console.log(caca);
         
         var Chemin1 = tindentation.split('/')[1];
         var chemin = "";
@@ -54,11 +55,12 @@ function enumerate(tlist, caca) {
             ii += 1
 
         }
-        console.log(chemin);
+        
         choses = tlist[chemin];
         
 
     } else {
+        
         
         choses = Object.keys(tlist);
     }
@@ -129,7 +131,8 @@ function goto()  {
     
 }
 
-function openfile(){
+function openfile(commandesaisi){
+
     var textdansinput2 = document.getElementById ('saisi').value;
     console.log(textdansinput2);
     
@@ -139,16 +142,18 @@ function openfile(){
     var textsaisi2 = derniereligne2.split("$")[1];
     textsaisi2 = textsaisi2.substring(1);
     
+    console.log(commandesaisi);
     
-    var file = textsaisi2.replace('cat ', '');
-    console.log(file);
+    var file = commandesaisi.replace('cat ', '');
+    
     
     //file = "Dates.txt";
+    console.log(file);
     return Fichiers[file];
     var win = window.location.pathname;
     win = win.replace('Game1.html', '');
     var path = "file:/" + win + 'Files/' + file;
-    console.log(path);
+    
     fetch(path)
         .then(response => response.text())
         .then(data => {
@@ -159,7 +164,9 @@ function openfile(){
 
 }
 
-var commandes = {'ls': enumerate(locations, indentation), 'cd': goto(), 'cat': openfile()}
+var tcommande = ""
+
+var commandes = {'ls': enumerate(locations, indentation), 'cd': goto(), 'cat': openfile(tcommande)}
 
 var commandesdispos = "";
 
@@ -174,7 +181,7 @@ function runScript(e) {
         return false;
     }
     if (e.keyCode == 38) {
-        console.log("caca");
+        
         copyagain();
         
         return false;
@@ -189,8 +196,12 @@ function runScript2(e) {
 }
 
 function runScript3(e) {
-    valider();
+    if (e.keyCode == 13){
+        valider();
     return false;
+
+    }
+    
     
     
 }
@@ -224,20 +235,33 @@ function submit() {
     var textsaisi = textsaisi.substring(1);
     var commandesaisi = textsaisi.split(' ')[0];
     
+    
 
     
     if (commandesaisi in commandes){
        
         if (commandesaisi != "cd") {
+            tcommande = textsaisi
             var txt = commandes[commandesaisi];
             var txt2;
             if (commandesaisi == 'ls'){
-                console.log(indentation);
+               
                 caca = indentation;
                 var txt2 = enumerate(locations, indentation)
                 document.getElementById ('saisi').value += '\r' + txt2 + '\r' + '\r' + indentation;
-            } else{
-                document.getElementById ('saisi').value += '\r' + txt + '\r' + '\r' + indentation;
+            } else {
+                
+                if (commandesaisi == 'cat'){
+                   
+                    var txt2 = openfile(tcommande);
+                    document.getElementById ('saisi').value += '\r' + txt2 + '\r' + '\r' + indentation;
+
+                } else{
+                    document.getElementById ('saisi').value += '\r' + txt + '\r' + '\r' + indentation;
+
+                }
+            
+                
 
             }
             
